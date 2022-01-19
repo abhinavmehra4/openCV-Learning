@@ -40,7 +40,7 @@ cv.imshow('Eroded',eroded)
 #structuring element(canny edge image) ------> diluted image ----------> eroded image
 #                                      <------               <---------
 
-#6 Resizing an image
+#6 Resizing an image- #aspect ratio is ignored.
 
 resized = cv.resize(img,(500,500), interpolation = cv.INTER_AREA)#this is used when you have to reduce the size
 #but in case youii want to scale the image to a much mich bigger sze you can us e the following

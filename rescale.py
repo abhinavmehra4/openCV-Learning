@@ -5,16 +5,17 @@ cv.imshow('Cat',img)
 
 
 def rescaleFrame(frame,scale=0.2):
-    #This image works for images, videos and live video
+    #This method works for images, videos and live video
     width = int(frame.shape[1]*scale )#wight of the image
-    height = int(frame.shape[1]*scale )#height of the image
+    height = int(frame.shape[0]*scale )#height of the image
 
     dimensions = (width,height) #a tuple of the dimensions are created
 
     return cv.resize(frame, dimensions, interpolation = cv.INTER_AREA) 
 
 def changeRes(width,height):
-    #works onli for live videos, i.e from an external webcam or a laptop camera
+    #works only for live videos, i.e from an external webcam or a laptop camera
+    #below 3 references the width and 4 references the height.And that too by default.
     capture.set(3,width)
     capture.set(4,height)#if you want to change the brightness, then increase this to 10
 
